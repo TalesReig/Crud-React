@@ -26,6 +26,7 @@ const ListarPlantas = ({ navigation }) => {
   const handleRemove = async (plantId) => {
     try {
       await deleteDoc(doc(DB, "plantas", plantId));
+      alert("Planta reomovida com Sucesso");
       const updatedArray = array.filter(item => item.id !== plantId);
       setArray(updatedArray);
     } catch (error) {
